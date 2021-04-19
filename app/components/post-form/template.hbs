@@ -1,0 +1,12 @@
+<form {{on 'submit' this.onSubmit}}>
+	<label>
+		Title
+	<Input @value={{@post.title}} />
+	</label>
+	<label>
+		Content
+	<Textarea @value={{@post.content}} name="content" id="" cols="30" rows="10" />
+
+	</label>
+	<input type="submit" value="Create">
+</form>
