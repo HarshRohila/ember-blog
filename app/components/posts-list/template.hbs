@@ -1,5 +1,12 @@
 <ul>
 	{{#each @posts as |post|}}
-		<li>{{post.title}}</li>
+		<li>
+			<h3>
+				{{post.title}}
+			</h3>
+			<button {{on 'click' (fn this.onDelete post)}}>
+				X
+			</button>
+		</li>
 	{{/each}}
 </ul>
