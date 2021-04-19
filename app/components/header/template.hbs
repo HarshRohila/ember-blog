@@ -1,0 +1,8 @@
+<LinkTo @route='index'>Home</LinkTo>
+{{#if this.session.isAuthenticated}}
+	<button {{on 'click' this.logout}}>Logout</button>
+	<LinkTo @route='create-post'>Create Post</LinkTo>
+{{else}}
+	<button {{on 'click' this.login}}>Login</button>
+{{/if}}
+{{yield}}

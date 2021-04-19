@@ -21,6 +21,16 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    firebase: {
+      apiKey: "AIzaSyDHaf-Qy7OYRM5___osPlRTTAJmlFTtRjs",
+      authDomain: "react-blog-cbf68.firebaseapp.com",
+      projectId: "react-blog-cbf68",
+      storageBucket: "react-blog-cbf68.appspot.com",
+      messagingSenderId: "305917441200",
+      databaseURL: 'https://react-blog-cbf68.firebaseio.com',
+      appId: "1:305917441200:web:5e14959b5ed014f6783775"
+    }  
   };
 
   if (environment === 'development') {
