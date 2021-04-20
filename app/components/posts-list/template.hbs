@@ -1,7 +1,7 @@
 <ul>
 	{{#each @posts as |post|}}
 		<li>
-			<LinkTo @route='post' @model={{post.id}}>
+			<LinkTo @route='posts.post' @model={{post.id}}>
 				{{post.title}}
 			</LinkTo>
 			<button {{on 'click' (fn this.onDelete post)}}>
