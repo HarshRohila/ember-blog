@@ -5,8 +5,7 @@
 	</label>
 	<label>
 		Content
-	<Textarea @value={{@post.content}} name="content" id="" cols="30" rows="10" />
-
+		<Editor @content={{@post.content}} @onChange={{this.onContentChange}} />
 	</label>
 	<input type="submit" value="Create">
 </form>

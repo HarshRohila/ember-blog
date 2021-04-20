@@ -8,4 +8,9 @@ export default class PostFormComponent extends Component {
 		this.args.post.save();
 		this.args.onSubmit?.();
 	}
+
+	@action
+	onContentChange(newContent) {
+		this.args.post.set('content', newContent);
+	}
 }
