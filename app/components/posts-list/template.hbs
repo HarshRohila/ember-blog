@@ -1,9 +1,9 @@
 <ul>
 	{{#each @posts as |post|}}
 		<li>
-			<h3>
+			<LinkTo @route='post' @model={{post.id}}>
 				{{post.title}}
-			</h3>
+			</LinkTo>
 			<button {{on 'click' (fn this.onDelete post)}}>
 				X
 			</button>
