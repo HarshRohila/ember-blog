@@ -1,8 +1,17 @@
-<LinkTo @route='index'>Home</LinkTo>
-{{#if this.session.isAuthenticated}}
-	<button {{on 'click' this.logout}}>Logout</button>
-	<LinkTo @route='create-post'>Create Post</LinkTo>
-{{else}}
-	<button {{on 'click' this.login}}>Login</button>
-{{/if}}
-{{yield}}
+<header local-class="header">
+	<LinkTo @route="index">
+		Public Diary
+	</LinkTo>
+	{{#if this.session.isAuthenticated}}
+		<button {{on 'click' this.logout}}>
+			Logout
+		</button>
+		<LinkTo @route="create-post">
+			Create Post
+		</LinkTo>
+	{{else}}
+		<button local-class="login" {{on 'click' this.login}}>
+			Login
+		</button>
+	{{/if}}
+</header>
