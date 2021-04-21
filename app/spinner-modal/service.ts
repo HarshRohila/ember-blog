@@ -9,8 +9,15 @@ export default class SpinnerModal extends Service.extend({
 
   async load(asyncFunc: () => Promise<any>) {
     this.isLoading = true;
-    await asyncFunc();
-    this.isLoading = false;
+    
+    try {
+      await asyncFunc();
+    } catch (error) {
+      console.error(error);
+      throw error;
+    } finally {
+      this.isLoading = false;
+    }
   }
 }
 

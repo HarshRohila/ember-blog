@@ -30,7 +30,12 @@ module.exports = function (environment) {
       messagingSenderId: "305917441200",
       databaseURL: 'https://react-blog-cbf68.firebaseio.com',
       appId: "1:305917441200:web:5e14959b5ed014f6783775"
-    }  
+    },
+
+    'ember-cli-notifications': {
+      autoClear: true,
+      clearDuration: 2400
+    }
   };
 
   if (environment === 'development') {
