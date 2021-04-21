@@ -1,10 +1,21 @@
 .login {
 	font-weight: 600;
-	
 }
 
 .header {
 	background-color: var(--surface);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	>div {
+		display: flex;
+		align-items: center;
+
+		button {
+			margin: 0 10px;
+		}
+	}
 	a {
 		color: var(--secondary);
 		font-size: 2rem;

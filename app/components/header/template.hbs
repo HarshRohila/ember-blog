@@ -1,17 +1,16 @@
 <header local-class="header">
+	{{on-key 'ctrl+shift+KeyL' this.login}}
 	<LinkTo @route="index">
 		Public Diary
 	</LinkTo>
 	{{#if this.session.isAuthenticated}}
-		<button {{on 'click' this.logout}}>
-			Logout
-		</button>
-		<LinkTo @route="create-post">
-			Create Post
-		</LinkTo>
-	{{else}}
-		<button local-class="login" {{on 'click' this.login}}>
-			Login
-		</button>
+		<div>
+			<button {{on 'click' this.logout}}>
+				Logout
+			</button>
+			<LinkTo @route="create-post">
+				Create Post
+			</LinkTo>
+		</div>
 	{{/if}}
 </header>
