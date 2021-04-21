@@ -1,3 +1,5 @@
-<div local-class="loading">
-	<FaIcon @icon="spinner" @spin={{true}} @size="4x" />
-</div>
+{{#if this.spinnerModal.isLoading}}
+	<div local-class="loading">
+		<FaIcon @icon="spinner" @spin={{true}} @size="4x" />
+	</div>
+{{/if}}
