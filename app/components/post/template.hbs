@@ -1,3 +1,10 @@
-<h1>{{@post.title}}</h1>
-<div>{{html-safe @post.content}}</div>
+<h1>
+	{{@post.title}}
+</h1>
+<p>
+	{{@post.createdAt}}
+</p>
+<div>
+	{{html-safe @post.content}}
+</div>
 {{yield}}

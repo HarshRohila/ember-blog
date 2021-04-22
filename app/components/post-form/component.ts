@@ -13,8 +13,16 @@ export default class PostFormComponent extends Component<PostFormComponentArgs> 
 	@action
 	async onSubmit(formEvent: Event) {
 		formEvent.preventDefault();
+
+		this.addTimestampToPost(this.args.post);
+
 		await taskFor(this.savePost).perform();
+
 		this.args.onSubmit?.();
+	}
+
+	private addTimestampToPost(post: PostModel) {
+		post.set('createdAtTimestamp', new Date().getTime());
 	}
 
 	@dropTask
