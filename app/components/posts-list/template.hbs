@@ -1,9 +1,12 @@
-<ul>
+<ul local-class="posts">
 	{{#each @posts as |post|}}
 		<li>
 			<LinkTo @route="posts.post" @model={{post.id}}>
 				{{post.title}}
 			</LinkTo>
+			<em>
+				{{post.createdAt}}
+			</em>
 			{{#if this.session.isAuthenticated}}
 				<button {{on 'click' (fn this.onDelete post)}}>
 					X

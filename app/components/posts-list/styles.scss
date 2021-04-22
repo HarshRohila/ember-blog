@@ -1,0 +1,31 @@
+.posts {
+	list-style-type: none;
+	padding-left: 0;
+	margin: 20px;
+	li {
+		font-size: 1.5rem;
+		padding: 10px 20px;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: var(--surface);
+			cursor: pointer;
+		}
+	}
+	a {
+		color: var(--secondary);
+		text-decoration: none;
+		font-weight: 600;
+	
+	}
+	em {
+		display: inline;
+		font-size: 1rem;
+		color: var(--primary);
+		font-weight: 600;
+		margin-left: 20px;
+	}
+	li + li {
+		margin-top: 2rem;
+	}
+}
