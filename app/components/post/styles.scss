@@ -1,0 +1,15 @@
+.post {
+	h1 {
+		color: var(--secondary);
+		font-size: 2rem;
+	}
+	em {
+		font-weight: 600;
+		color: var(--primary);
+	}
+	>div {
+		color: var(--secondary);
+		font-size: 1.2em;
+	}
+	margin: 20px;
+}

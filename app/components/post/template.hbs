@@ -1,10 +1,12 @@
-<h1>
-	{{@post.title}}
-</h1>
-<p>
-	{{@post.createdAt}}
-</p>
-<div>
-	{{html-safe @post.content}}
-</div>
+<article local-class="post">
+	<h1>
+		{{@post.title}}
+	</h1>
+	<em>
+		{{@post.createdAt}}
+	</em>
+	<div>
+		{{html-safe @post.content}}
+	</div>
+</article>
 {{yield}}
