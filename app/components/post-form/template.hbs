@@ -1,11 +1,16 @@
 <form {{on 'submit' this.onSubmit}}>
 	<label>
 		Title
-	<Input @value={{@post.title}} />
+		<Input @value={{@post.title}} />
 	</label>
 	<label>
 		Content
 		<Editor @content={{@post.content}} @onChange={{this.onContentChange}} />
 	</label>
-	<input type="submit" value="Create">
+	<button type="submit">
+		Create
+		{{#if this.savePost.isRunning}}
+			<FaIcon @icon="spinner" @spin={{true}} />
+		{{/if}}
+	</button>
 </form>
