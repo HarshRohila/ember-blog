@@ -1,4 +1,11 @@
 .post {
+	position: relative;
+	margin: 20px;
+
+	button {
+		position: absolute;
+		right: 0;
+	}
 	h1 {
 		color: var(--secondary);
 		font-size: 2rem;
@@ -11,5 +18,4 @@
 		color: var(--secondary);
 		font-size: 1.2em;
 	}
-	margin: 20px;
 }
