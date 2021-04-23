@@ -1,15 +1,19 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import PostModel from 'ember-blog/post/model';
 import { dropTask } from 'ember-concurrency';
 import { taskFor } from 'ember-concurrency-ts';
+import { inject as service, Registry as Services } from '@ember/service';
+import { BufferedChangeset } from 'validated-changeset';
 
 interface PostFormComponentArgs {
-	post: PostModel;
+	post: BufferedChangeset;
 	onSubmit?(): void;
 }
 
 export default class PostFormComponent extends Component<PostFormComponentArgs> {
+
+	@service store!: Services['store'];
+
 	@action
 	async onSubmit(formEvent: Event) {
 		formEvent.preventDefault();
@@ -21,13 +25,15 @@ export default class PostFormComponent extends Component<PostFormComponentArgs> 
 		this.args.onSubmit?.();
 	}
 
-	private addTimestampToPost(post: PostModel) {
+	private addTimestampToPost(post: BufferedChangeset) {
 		post.set('createdAtTimestamp', new Date().getTime());
 	}
 
 	@dropTask
 	*savePost() {
-		yield this.args.post.save();
+		this.args.post.execute();
+		const post = this.store.createRecord('post', this.args.post.data);
+		yield post.save();
 	}
 
 	@action

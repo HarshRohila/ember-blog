@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import FormModel from '../utils/FormModel';
 import { inject as service } from '@ember/service';
+import PostModel from 'ember-blog/post/model';
 
 export default class CreatePostRoute extends Route {
 
@@ -13,7 +14,17 @@ export default class CreatePostRoute extends Route {
 	}
 
 	model() {
-		const newPost = this.store.createRecord('post');
-		return new FormModel(newPost);
+		const newPost = this.getNewPost();
+		const formModel = new FormModel(newPost);
+
+		return formModel;
+	}
+
+	getNewPost() {
+		return {
+			title: '',
+			content: '',
+			createdAtTimestamp: undefined
+		};
 	}
 }

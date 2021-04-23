@@ -1,5 +1,7 @@
 <article local-class="post">
-	<Button @text="Edit" @icon="pencil-alt" />
+	{{#if this.session.isAuthenticated}}
+		<Button @text="Edit" @icon="pencil-alt" />
+	{{/if}}
 	<h1>
 		{{@post.title}}
 	</h1>
