@@ -6,21 +6,25 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | button', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders button text', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{button}}`);
+    const btnText = 'button-text';
+    this.set('text', btnText);
+    await render(hbs`{{button text=text}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText(btnText);
+  });
 
-    // Template block usage:
-    await render(hbs`
-      {{#button}}
-        template block text
-      {{/button}}
-    `);
+  test('it renders button icon', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    const iconName = 'coffee';
+    this.set('icon', iconName);
+    await render(hbs`{{button icon=icon}}`);
+
+    assert.dom(this.element.querySelector('svg.fa-coffee')).exists();
   });
 });
