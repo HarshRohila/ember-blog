@@ -22,7 +22,7 @@ module('Integration | Component | header', function (hooks) {
     assert.equal(this.element.textContent.trim(), 'Public Diary');
   });
 
-  test('it shows diff template if authenticated', async function (assert) {
+  test('it shows different template if authenticated', async function (assert) {
     this.owner.register('service:session', SessionStub);
     await render(hbs`<Header />`);
 

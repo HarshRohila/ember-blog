@@ -9,7 +9,7 @@
 	</label>
 	<button type="submit">
 		Create
-		{{#if this.savePost.isRunning}}
+		{{#if this.submitTask.isRunning}}
 			<FaIcon @icon="spinner" @spin={{true}} />
 		{{/if}}
 	</button>
