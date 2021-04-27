@@ -1,6 +1,8 @@
 <article local-class="post">
 	{{#if this.session.isAuthenticated}}
-		<Button @text="Edit" @icon="pencil-alt" @onClick={{this.onEdit}} />
+		<LinkTo @route="posts.edit" @model={{@post.id}}>
+			<Button @text="Edit" @icon="pencil-alt" />
+		</LinkTo>
 	{{/if}}
 	<h1>
 		{{@post.title}}
