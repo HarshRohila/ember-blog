@@ -1,11 +1,13 @@
+@import "./helpers/colors";
+
 :root {
-  --primary-color: #3aafa9;
-  --secondary-color: #17252a;
+  @include defineColorRGB(--primary, #3aafa9);
+  @include defineColorRGB(--secondary, #17252a);
   
-  --secondary: var(--secondary-color);
-  --primary: var(--primary-color);
-  --surface: #def2f1;
-  --background: #feffff;
+  @include defineColorRGB(--surface, #def2f1);
+  @include defineColorRGB(--background, #feffff);
+
+  --shadow-secondary: 0px 1px 1px 0px rgba(var(--secondary-rgb), 0.6);
 }
 
 body, html {
