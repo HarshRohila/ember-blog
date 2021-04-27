@@ -1,16 +1,21 @@
-<form {{on 'submit' this.onSubmit}}>
-	<label>
-		Title
-		<Input @value={{@post.title}} />
-	</label>
-	<label>
-		Content
-		<Editor @content={{@post.content}} @onChange={{this.onContentChange}} />
-	</label>
-	<Button
-		@text="Save"
-		type="submit"
-		@icon={{if this.submitTask.isRunning 'spinner' 'save'}}
-		@iconSpin={{this.submitTask.isRunning}}
-	/>
-</form>
+<Page>
+	<form local-class="form" {{on 'submit' this.onSubmit}}>
+		<label local-class="title">
+			<span>
+				Title
+			</span>
+			<Input @value={{@post.title}} />
+		</label>
+		<label local-class="content">
+			<Editor @content={{@post.content}} @onChange={{this.onContentChange}} />
+		</label>
+		<div local-class="actions">
+			<Button
+				@text="Save"
+				type="submit"
+				@icon={{if this.submitTask.isRunning 'spinner' 'save'}}
+				@iconSpin={{this.submitTask.isRunning}}
+			/>
+		</div>
+	</form>
+</Page>
