@@ -7,10 +7,10 @@
 		Content
 		<Editor @content={{@post.content}} @onChange={{this.onContentChange}} />
 	</label>
-	<button type="submit">
-		Create
-		{{#if this.submitTask.isRunning}}
-			<FaIcon @icon="spinner" @spin={{true}} />
-		{{/if}}
-	</button>
+	<Button
+		@text="Save"
+		type="submit"
+		@icon={{if this.submitTask.isRunning 'spinner' 'save'}}
+		@iconSpin={{this.submitTask.isRunning}}
+	/>
 </form>

@@ -1,6 +1,6 @@
 <button local-class="button" ...attributes {{on 'click' (optional @onClick)}}>
 	{{@text}}
 	{{#if @icon}}
-		<FaIcon @icon={{@icon}} />
+		<FaIcon @icon={{@icon}} @spin={{this.iconSpin}} />
 	{{/if}}
 </button>
