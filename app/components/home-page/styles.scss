@@ -1,0 +1,31 @@
+.home-page {
+	display: grid;
+	grid-auto-columns: 400px auto;
+	grid-template-areas: "image posts";
+
+	flex: 1;
+	min-height: 0;
+
+	ul {
+		grid-area: posts;
+		min-height: 0;
+		overflow-y: scroll;
+	}
+}
+
+.image-container {
+	grid-area: image;
+
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+
+	background-image: url(../blog-pic.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	img {
+		flex: 1;
+	}
+}

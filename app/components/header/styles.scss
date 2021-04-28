@@ -3,6 +3,8 @@
 }
 
 .header {
+	position: relative;
+	z-index: 1;
 	background-color: var(--surface);
 	display: flex;
 	align-items: center;
