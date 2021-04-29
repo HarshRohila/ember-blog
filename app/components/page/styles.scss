@@ -1,5 +1,7 @@
+@import "ember-blog/styles/helpers/px2rem";
+
 .main {
-	padding: 15px;
+	padding: px2rem(10);
 	display: flex;
 	flex-direction: column;
 	flex: 1;

@@ -1,6 +1,6 @@
 .home-page {
 	display: grid;
-	grid-auto-columns: 400px auto;
+	grid-auto-columns: minmax(150px, 400px) minmax(300px, auto);
 	grid-template-areas: "image posts";
 
 	flex: 1;
@@ -16,7 +16,6 @@
 .image-container {
 	grid-area: image;
 
-	width: 400px;
 	display: flex;
 	flex-direction: column;
 

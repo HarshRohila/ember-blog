@@ -1,10 +1,13 @@
+@import "ember-blog/styles/helpers/px2rem";
+
 .posts {
 	list-style-type: none;
 	padding-left: 0;
-	margin: 20px;
+	margin: px2rem(10);
+
 	li {
-		font-size: 1.5rem;
-		padding: 10px 20px;
+		font-size: px2rem(20);
+		padding: px2rem(5) px2rem(10);
 		border-radius: 5px;
 
 		&:hover {
@@ -16,11 +19,10 @@
 		color: var(--secondary);
 		text-decoration: none;
 		font-weight: 600;
-	
 	}
 	em {
 		display: inline;
-		font-size: 1rem;
+		font-size: px2rem(16);
 		color: var(--primary);
 		font-weight: 600;
 		margin-left: 20px;
