@@ -1,6 +1,7 @@
 .post {
 	position: relative;
 	margin: 20px;
+	overflow: auto;
 
 	button {
 		position: absolute;
@@ -14,8 +15,9 @@
 		font-weight: 600;
 		color: var(--primary);
 	}
-	>div {
+	> div {
 		color: var(--secondary);
 		font-size: 1.2em;
+		text-align: justify;
 	}
 }
