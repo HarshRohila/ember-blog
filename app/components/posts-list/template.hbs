@@ -1,9 +1,9 @@
 <ul local-class="posts">
 	{{#each @posts as |post|}}
-		<li>
-			<LinkTo @route="posts.post" @model={{post.id}}>
+		<LinkTo @route="posts.post" @model={{post.id}} @tagName="li">
+			<a>
 				{{post.title}}
-			</LinkTo>
+			</a>
 			<em>
 				{{post.createdAt}}
 			</em>
@@ -12,6 +12,6 @@
 					X
 				</button>
 			{{/if}}
-		</li>
+		</LinkTo>
 	{{/each}}
 </ul>
