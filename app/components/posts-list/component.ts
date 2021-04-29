@@ -10,6 +10,16 @@ export default class PostsListComponent extends Component {
 
 	@action
 	onDelete(post: PostModel) {
+
+		const confirmation = this.getConfirmation();
+		if (!confirmation) {
+			return;
+		}
+
 		post.destroyRecord();
+	}
+
+	private getConfirmation() {
+		return window.confirm('Are you sure you want to delete this post?');
 	}
 }
