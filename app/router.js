@@ -12,4 +12,5 @@ Router.map(function () {
     this.route('post', { path: '/:post_id' });
     this.route('edit', { path: '/:post_id/edit' });
   });
+  this.route('user-home', { path: '/users/:user_id' });
 });

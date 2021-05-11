@@ -6,6 +6,8 @@ export default class PostModel extends Model {
 	@attr('string') content?: string;
 	@attr('number') createdAtTimestamp?: number;
 
+	@attr('string') userId?: string;
+
 	@computed('createdAt')
 	get createdAt() {
 		if (!this.createdAtTimestamp) {
