@@ -5,6 +5,10 @@
 	</LinkTo>
 	{{#if this.session.isAuthenticated}}
 		<div>
+			<h3>
+				Welcome
+				{{this.session.data.authenticated.user.displayName}}
+			</h3>
 			<button {{on 'click' this.logout}}>
 				Logout
 			</button>
