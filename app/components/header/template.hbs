@@ -1,5 +1,4 @@
 <header local-class="header">
-	{{on-key 'ctrl+shift+KeyL' this.login}}
 	<LinkTo @route="index">
 		Public Diary
 	</LinkTo>
@@ -16,5 +15,9 @@
 				Create Post
 			</LinkTo>
 		</div>
+	{{else}}
+		<button {{on 'click' this.login}}>
+			Login
+		</button>
 	{{/if}}
 </header>
