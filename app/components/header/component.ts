@@ -8,17 +8,17 @@ import SpinnerModal from 'ember-blog/spinner-modal/service';
 
 export default class HeaderComponent extends Component {
 
-	@service session!: SessionService;
-	@service firebaseApp!: FirebaseAppService;
+  @service session!: SessionService;
+  @service firebaseApp!: FirebaseAppService;
   @service spinnerModal!: SpinnerModal;
   @service notifications!: NotificationsService;
 
-	@action
+  @action
   logout() {
     return this.session.invalidate();
   }
 
-	@action
+  @action
   async login() {
     try {
       await this.spinnerModal.load(this.loginWithGoogle.bind(this));

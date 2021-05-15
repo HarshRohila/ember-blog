@@ -1,0 +1,12 @@
+<Button
+	@icon="ellipsis-v"
+	@onClick={{action this.toggleMenu}}
+	{{click-outside this.closeMenu}}
+/>
+{{#if this.showMenu}}
+	<ul>
+		<li>
+			item
+		</li>
+	</ul>
+{{/if}}
